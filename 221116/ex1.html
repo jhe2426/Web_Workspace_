@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <h2>자바스크립트의 객체 JSON 확인. "키:값" 형태.</h2>
+    <h2>coworkers라는 변수 이름으로 객체를 선언 테스트중</h2>
+    <script>
+
+        var coworkers = {
+            "programmer": "정하은1",
+            "designer": "정하은2",
+
+        }
+        coworkers.bookkeeper = "정하은3";
+        coworkers["data scientist"] = "정하은4";//키명에 공백이 있을 때 객체에 입력하는 방법임
+        // document.write("programmer : " + coworkers.programmer + "<br>");
+        // document.write("designer : " + coworkers.designer + "<br>");
+        // document.write("bookkeeper : " + coworkers.bookkeeper + "<br>");
+        // document.write("data scientist : " + coworkers["data scientist"] + "<br>");
+    </script>
+    <h1>객체 반복 연습중</h1>
+    <!-- <script>
+        for (var key in coworkers) {   for (var key in coworkers) <-- 이 부분에 key는 내가 원하는 변수로 지정 가능함 객체 안에 있는 키 값을 내가 지정한 변수에다가 집어 넣어라는 뜻
+            document.write(key + ':' + coworkers[key] + '<br>');
+        }
+    </script> -->
+    <h1>객체 반복 함수 정의 및 사용 연습중2</h1>
+    <script>
+        coworkers.showAll = function () {
+            for (var key in this) {
+                document.write(key + ' : ' + this[key] + '<br>');
+            }
+        }
+        coworkers.showAll();
+        /*coworkers.showAll();coworkers객체안에 showAll이라는 키로 함수를 만들었다.
+							그러므로 저 함수를 호출하면 document.write(key + ' : ' + this[key] + '<br>');
+							coworkers키 전부가 다 호출되기 때문에 coworkers 키 중에서 showAll도 키이므로 출력 하면에 같이 나오게 되는 것
+							안나오게 하려면 if문에 NOT coworkers.showAll를 사용하면 showAll의 키도 출력이 안 되고 값도 출력이 안 될 것*/
+    </script>
+
+
+
+
+    <h2>함수 사용2 매개변수 및 인자값, 리턴값 테스트중.</h2>
+    <script>
+        function sum(left, right) {
+            document.write(left + right + '<br>');
+        }
+        function sumColorRed(left, right) {
+            document.write('<div style="color: red;">' + left + right + '</div><br>');
+        }
+        function sumColorRed(left, right) {
+            document.write('<div style="color: red;">' + (left + right) + '</div><br>');
+        }//위의 코드처럼 ()이 부호를 넣어주어 우선 순위를 바꾸게 해 상수들을 먼저 계산하고 문자열들을 만나게 되어 만자열로 만들어지게 한 것
+        function sum2(left, right) {
+            //함수의 결과값만 따로 재사용을 하기 위해서 
+            //return 키워드를 사용함.
+            return left + right
+        }
+        sum(2, 3);
+        sum(3, 4);
+        sumColorRed(1, 100);
+        document.write('sum2 함수를 따로 빼서 사용중. 문자열 결과로 나와서. 임의로 변경.');
+        document.write('<div style="color: red">' + sum2(2, 3) + '</div><br>');
+        document.write('<div style="font-size: 3rem">' + sum2(2, 3) + '</div><br>');
+
+    </script>
+
+
+    <h2>함수 사용 테스트중.</h2>
+    <script>
+        function test() {
+            document.write('<li>반복 확인중 테스트 함수 재사용</li>');
+            document.write('<li>빔이 화질이 안 좋아짐.</li>');
+        }
+        function two() {
+            document.write('<li>2-1</li>');
+            document.write('<li>2-2</li>');
+        }
+        document.write('<li>1</li>');
+        test();
+        two();
+        document.write('<li>3</li>');
+        test();
+        two();
+        test();
+
+    </script>
+
+
+
+
+    <h2>Coworkers3</h2>
+    <ul>
+        <script>
+            var coworkers = ["egoing", "leezche", "duru", "taeho"]; //배열선언 및 초기화
+            var i = 0;
+            while (i < coworkers.length) {
+                document.write('<li><a href=http://a.com/' + coworkers[i] + '>' + coworkers[i] + '</a></li>');
+                i = i + 1;
+            }
+            //'<li><a href=http://a.com/' + coworkers[i] + '>'링크주소를 http://a.com/에다가 배열 인덱스 각 각의 값을 집어넣어서 주소를 만들 것이다라는 뜻
+        </script>
+    </ul>
+
+
+
+    <h2>2, 3번째 코드 3번 반복</h2>
+    <script>
+        document.write('<li>1</li>');
+        var i = 0;
+        while (i < 3) {
+            document.write('<li>2</li>');
+            document.write('<li>3</li>');
+            i = i + 1;
+        }
+        document.write('<li>4</li>');
+    </script>
+
+</body>
+
+</html>
